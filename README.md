@@ -5,7 +5,7 @@ tpch_2_17 change text length
 
 ```bash
 cd dbgen
-bash dbgen.sh dbgen -s 120
+bash dbgen.sh ./dbgen -s 120
 ```
 
 see [dbgen/README](dbgen/README)
