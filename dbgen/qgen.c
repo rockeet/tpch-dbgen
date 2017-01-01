@@ -43,7 +43,7 @@
 #include "release.h"
 
 
-#define LINE_SIZE 512
+#define LINE_SIZE 8192
 
 /*
  * Function Protoypes
