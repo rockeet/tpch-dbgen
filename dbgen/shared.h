@@ -48,8 +48,9 @@
 #define  O_CLRK_LEN    15
 #define  O_CMNT_LEN    49
 #define  O_CMNT_MAX    79
-#define  L_CMNT_LEN    1024
-#define  L_CMNT_MAX    2048
+#define  L_CMNT_LEN    g_L_CMNT_LEN()
+#define  L_CMNT_MAX    16384
+extern int g_L_CMNT_LEN();
 #define  L_INST_LEN    25
 #define  L_SMODE_LEN   10
 #define  T_ALPHA_LEN   10

@@ -449,3 +449,28 @@ mk_region(DSS_HUGE index, code_t * c)
 	c->clen = (int)strlen(c->comment);
 	return (0);
 }
+
+static int getEnvInt(const char* name, int Default) {
+	const char* env = getenv("L_CMNT_LEN");
+	if (env) {
+		int ival = atoi(env);
+		if (ival <= 0) {
+			fprintf(stderr, "ERROR: invalid env %s = %s, must > 0\n", name, env);
+			exit(1);
+		}
+		return ival;
+	}
+	return Default;
+}
+
+int g_L_CMNT_LEN() {
+	static int val = 0;
+	if (0 == val) {
+		val = getEnvInt("L_CMNT_LEN", 27);
+		if (val >= L_CMNT_MAX) {
+			fprintf(stderr, "ERROR: env L_CMNT_LEN must <= L_CMNT_MAX(%d)\n", L_CMNT_MAX);
+			exit(1);
+		}
+	}
+	return val;
+}
