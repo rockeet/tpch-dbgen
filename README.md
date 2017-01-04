@@ -1,6 +1,12 @@
 # tpch_2_17
 tpch_2_17 change text length
 
+## Compile
+```bash
+cd dbgen
+make
+```
+
 ## dbgen/dbgen.sh 直接生成压缩的数据库表文件
 
 ```bash
